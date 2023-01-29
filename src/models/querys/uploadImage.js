@@ -4,6 +4,7 @@ async function uploadImage(url) {
   const requestURL = `https://api.imgbb.com/1/upload?${new URLSearchParams({
     key: process.env.IMGBB_API_KEY,
     image: url,
+    expiration: "604800",
   })}`;
 
   const response = await fetch(requestURL, {
